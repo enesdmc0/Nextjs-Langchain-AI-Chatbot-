@@ -2,6 +2,8 @@ import { Metadata } from "next";
 import { H1 } from "@/components/ui/H1";
 import Image from "next/image";
 import me from "@/assets/me.jpeg";
+import { H2 } from "@/components/ui/H2";
+import { Bot } from "lucide-react";
 export const metadata: Metadata = {
   title: "Enes Demirci - My Smart Portfolio",
 };
@@ -26,6 +28,15 @@ export default function Home() {
             className="aspect-square rounded-full border-2 object-cover shadow-md dark:border-foreground"
           />
         </div>
+      </section>
+      <section className="space-y-3 text-center">
+        <H2>Ask rhe chatbot anything about me </H2>
+        <p>
+          Click the little <Bot className="inline pb-1" /> icon in the top bar
+          to activate the AI chat. You can ask the chatbot any question about me
+          and it will find the relevant info on this website. The bot can even
+          provide links to pages you&apos;re looking for.
+        </p>
       </section>
     </section>
   );

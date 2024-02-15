@@ -1,13 +1,10 @@
 import { cn } from "@/lib/utils";
 
-export const H1 = (props: React.HTMLProps<HTMLHeadingElement>) => {
+export const H2 = (props: React.HTMLProps<HTMLHeadingElement>) => {
   return (
-    <h1
+    <h2
       {...props}
-      className={cn(
-        "text-2xl font-semibold tracking-tight",
-        props.className,
-      )}
+      className={cn("text-2xl font-semibold tracking-tight", props.className)}
     />
   );
 };
