@@ -1,4 +1,4 @@
-import bjj from "@/assets/bjj.jpg";
+import bjj from "@/assets/me.jpeg";
 import { H1 } from "@/components/ui/H1";
 import { H2 } from "@/components/ui/H2";
 import { Metadata } from "next";
@@ -17,8 +17,8 @@ export default function Page() {
       <section className="space-y-3">
         <H2>Who am I?</H2>
         <p>
-          My name is Florian Walther and I am a self-taught software developer
-          from Germany. I started programming in 2017, at the age of 26, and
+          My name is Enes Demirci and I am a self-taught software developer
+          from Turkey. I started programming in 2019, at the age of 18, and
           since then I have created hundreds of tutorials on my YouTube channel{" "}
           <a
             href="https://www.youtube.com/codinginflow"

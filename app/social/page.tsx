@@ -31,7 +31,7 @@ export default function Page() {
           </li>
           <li>
             <a
-              href="https://www.instagram.com/codinginflow"
+              href="https://www.instagram.com/enes_dmc"
               className="text-primary hover:underline"
             >
               Instagram
@@ -39,15 +39,7 @@ export default function Page() {
           </li>
           <li>
             <a
-              href="https://www.tiktok.com/@codinginflow"
-              className="text-primary hover:underline"
-            >
-              TikTok
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.twitter.com/codinginflow"
+              href="https://www.twitter.com/enessdmcc"
               className="text-primary hover:underline"
             >
               Twitter
@@ -55,15 +47,7 @@ export default function Page() {
           </li>
           <li>
             <a
-              href="https://www.facebook.com/codinginflow"
-              className="text-primary hover:underline"
-            >
-              Facebook
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.github.com/codinginflow"
+              href="https://www.github.com/enesdmc0"
               className="text-primary hover:underline"
             >
               GitHub
@@ -71,18 +55,10 @@ export default function Page() {
           </li>
           <li>
             <a
-              href="https://www.linkedin.com/in/codinginflow"
+              href="https://www.linkedin.com/in/enesdemirci1"
               className="text-primary hover:underline"
             >
               LinkedIn
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.codinginflow.com/blog"
-              className="text-primary hover:underline"
-            >
-              Blog
             </a>
           </li>
         </ul>

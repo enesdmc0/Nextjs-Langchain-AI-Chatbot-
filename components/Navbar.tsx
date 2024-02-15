@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import ThemeToggle from "@/components/ThemeToggle";
+import AIChatButton from "@/components/AIChatButton";
 
 const Navbar = () => {
   return (
@@ -11,7 +12,8 @@ const Navbar = () => {
           <Link href="/about">about me</Link>
           <Link href="/social">social</Link>
         </nav>
-        <div>
+        <div className="flex items-center gap-4">
+          <AIChatButton />
           <ThemeToggle />
         </div>
       </div>
