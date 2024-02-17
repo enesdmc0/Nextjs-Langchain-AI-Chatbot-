@@ -1,7 +1,7 @@
-import React from "react";
+import React, {useEffect, useRef} from "react";
 import { Message, useChat } from "ai/react";
 import { cn } from "@/lib/utils";
-import { Bot, XCircle } from "lucide-react";
+import {Bot, SendHorizonal, Trash, XCircle} from "lucide-react";
 import ReactMarkDown from "react-markdown";
 import Link from "next/link";
 interface Props {
@@ -20,6 +20,21 @@ const AIChatBox: React.FC<Props> = ({ open, onClose }) => {
     error,
   } = useChat();
 
+  const inputRef = useRef<HTMLInputElement>(null)
+  const scrollRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTop = scrollRef.current.scrollHeight
+    }
+  }, [messages])
+
+    useEffect(() => {
+        if (open) {
+        inputRef.current?.focus()
+        }
+    }, [open])
+
   const lastMessageIsUser = messages[messages.length - 1]?.role === "user"
 
   return (
@@ -33,7 +48,7 @@ const AIChatBox: React.FC<Props> = ({ open, onClose }) => {
         <XCircle size={24} className="rounded-full bg-background" />
       </button>
       <div className="flex h-[600px] flex-col rounded border bg-background shadow-xl">
-        <div className="mt-3 h-full overflow-y-auto px-3">
+        <div ref={scrollRef} className="mt-3 h-full overflow-y-auto px-3">
           {messages.map((message) => (
             <ChatMessage key={message.id} message={message} />
           ))}
@@ -62,8 +77,25 @@ const AIChatBox: React.FC<Props> = ({ open, onClose }) => {
               </div>
           )}
         </div>
-        <form action="">
-          burda kaldık
+        <form onSubmit={handleSubmit} className="m-3 flex gap-1">
+          <button className="flex items-center justify-center w-10 flex-none"
+                  title="Clear Chat!" type="button"
+                  onClick={() => setMessages([])} >
+            <Trash size={24} />
+          </button>
+          <input ref={inputRef}
+              type="text"
+                 value={input}
+                 onChange={handleInputChange}
+                 placeholder="Type a message..."
+                 className="grow border rounded bg-background px-3 py-2"
+          />
+          <button className="flex items-center justify-center w-10 flex-none disabled:opacity-50"
+          disabled={isLoading || input.length === 0}
+                  title="Send Message!" type="submit"
+          >
+            <SendHorizonal size={24} />
+          </button>
         </form>
       </div>
     </div>
