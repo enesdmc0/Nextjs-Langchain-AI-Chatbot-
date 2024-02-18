@@ -10,7 +10,7 @@ import { getEmbeddingsCollection, getVectorStore } from "../lib/astradb";
 
 async function generateEmbeddings() {
 
-
+    await Redis.fromEnv().flushall();
     const vectorStore = await getVectorStore();
 
     (await getEmbeddingsCollection()).deleteMany({});

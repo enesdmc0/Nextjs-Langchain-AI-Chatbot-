@@ -91,7 +91,7 @@ const AIChatBox: React.FC<Props> = ({ open, onClose }) => {
                  className="grow border rounded bg-background px-3 py-2"
           />
           <button className="flex items-center justify-center w-10 flex-none disabled:opacity-50"
-          disabled={isLoading || input.length === 0}
+          disabled={input.length === 0}
                   title="Send Message!" type="submit"
           >
             <SendHorizonal size={24} />
